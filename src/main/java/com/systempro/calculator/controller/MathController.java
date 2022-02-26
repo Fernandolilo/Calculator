@@ -54,14 +54,14 @@ public class MathController {
 		return simpleMath.div(NumberConvert.convertToDouble(numberOne), NumberConvert.convertToDouble(numberTwo));
 	}
 
-	@RequestMapping(value = "/rest/{numberOne}/{numberTwo}", method = RequestMethod.GET)
-	public Double rest(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo)
+	@RequestMapping(value = "/media/{numberOne}/{numberTwo}", method = RequestMethod.GET)
+	public Double med(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo)
 			throws Exception {
 		if ((!NumberConvert.isNumeric(numberOne) || !NumberConvert.isNumeric(numberTwo))) {
 			throw new UnsuportedMathOperationException("plese set a numeric");
 		}
 
-		return simpleMath.rest(NumberConvert.convertToDouble(numberOne), NumberConvert.convertToDouble(numberTwo));
+		return simpleMath.media(NumberConvert.convertToDouble(numberOne), NumberConvert.convertToDouble(numberTwo));
 	}
 
 	@RequestMapping(value = "/raiz/{number}", method = RequestMethod.GET)
